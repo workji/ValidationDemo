@@ -9,7 +9,7 @@ class UserService {
     private UserMapper userMapper;
 
     // 業務ロジックチェック：メールアドレスの重複確認
-    public boolean isEmailRegistered(String email) {
+    public boolean existsByEmail(String email) {
         return userMapper.countByEmail(email) > 0;
     }
 

@@ -21,6 +21,7 @@ class UserFormValidator implements Validator {
             if (!form.getPassword().equals(form.getConfirmPassword())) {
                 // 特定のフィールドにエラーを紐づける
                 errors.rejectValue("confirmPassword", "Unmatch", "パスワードが一致しません");
+                errors.rejectValue("password", "Unmatch", "パスワードが一致しません");
             }
         }
     }

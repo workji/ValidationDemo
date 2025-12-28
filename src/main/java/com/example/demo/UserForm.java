@@ -25,7 +25,7 @@ import org.springframework.validation.Errors;
 
 // --- 1. DTO (Form Class) ---
 // 画面からの入力を受け取るクラス。単項目チェックのアノテーションを付与。
-class UserForm {
+public class UserForm {
 
     @NotBlank(message = "名前は必須です")
     @Size(max = 50, message = "名前は50文字以内で入力してください")
@@ -36,7 +36,7 @@ class UserForm {
     private String email;
 
     @NotBlank(message = "パスワードは必須です")
-    @Size(min = 8, max = 20, message = "パスワードは8文字以上20文字以内で入力してください")
+    @Size(min = 4, max = 20, message = "パスワードは4文字以上20文字以内で入力してください")
     private String password;
 
     // 単項目チェックとしての必須チェックのみ。相関チェックはValidatorで行う。
